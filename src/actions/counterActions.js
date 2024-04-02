@@ -1,4 +1,4 @@
-import { ADD_COUNTER, SUBTRACT_COUNTER, MULTIPLY_COUNTER, DIVIDE_COUNTER } from "../actionTypes/actionTypes";
+import { ADD_COUNTER, SUBTRACT_COUNTER, MULTIPLY_COUNTER, DIVIDE_COUNTER, SQRT_COUNTER, POW_COUNTER } from "../actionTypes/actionTypes";
 
 const addCounter = (value) => {
     return {
@@ -28,4 +28,16 @@ const divideCounter = (value) => {
     };
 }
 
-export { addCounter, subtractCounter, multiplyCounter, divideCounter};
+const sqrtCounter = () => {
+    return {
+        type: SQRT_COUNTER
+    };
+}
+
+const powCounter = (value) => {
+    return {
+        type: POW_COUNTER,
+        payload: value
+    };
+}
+export { addCounter, subtractCounter, multiplyCounter, divideCounter, sqrtCounter, powCounter};

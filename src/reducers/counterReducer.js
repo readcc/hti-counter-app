@@ -1,4 +1,4 @@
-import { ADD_COUNTER, SUBTRACT_COUNTER, MULTIPLY_COUNTER, DIVIDE_COUNTER } from "../actionTypes/actionTypes";
+import { ADD_COUNTER, SUBTRACT_COUNTER, MULTIPLY_COUNTER, DIVIDE_COUNTER, SQRT_COUNTER, POW_COUNTER } from "../actionTypes/actionTypes";
 
 const initialState = {
     counter: 3,
@@ -37,6 +37,18 @@ export const counterReducer = (state = initialState, action) => {
                     ...state,
                     status: "Cannot divide by zero"
                 };
+            };
+        case SQRT_COUNTER:
+            return {
+                ...state,
+                counter: Math.sqrt(state.counter),
+                status: "Square root of counter"
+            };
+        case POW_COUNTER:
+            return {
+                ...state,
+                counter: Math.pow(state.counter, action.payload),
+                status: "Counter raised to the power of " + action.payload
             };
         default:
             return state;

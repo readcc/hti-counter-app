@@ -5,6 +5,8 @@ import {
   multiplyCounter,
   subtractCounter,
   divideCounter,
+  sqrtCounter,
+  powCounter,
 } from "../actions/counterActions";
 import styles from "./CounterApp.module.css";
 
@@ -75,6 +77,21 @@ const CounterApp = () => {
           Divide by {inputValue}
         </button>
       </div>
+      <div className={styles.row}>
+        <button
+          className={styles.button}
+          onClick={() => dispatch(sqrtCounter(inputValue))}
+        >
+          Square Root
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => dispatch(powCounter(inputValue))}
+        >
+          Raise to the Power of {inputValue}
+        </button>
+      </div>
+    
     </div>
   );
 };
